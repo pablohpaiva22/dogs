@@ -6,10 +6,10 @@ body {
   margin: 0;
   padding: 0;
   padding-top: 4rem;
-  color: #333;
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: "Spectral", Georgia;
   --color-principal: #333;
+  --color-secondary: #fb1;
   font-family: var(--type-first);
 }
 
@@ -38,7 +38,7 @@ input {
   display: block;
   font-size: 1rem;
   font-family: var(--type-first);
-  color: #333;
+  color: var(--color-principal);
 }
 
 .container {
