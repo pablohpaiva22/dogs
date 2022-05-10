@@ -1,0 +1,15 @@
+.btn {
+  display: block;
+  background-color: rgb(255, 196, 0);
+  width: 140px;
+  padding: 12px;
+  box-shadow: 0 0 0 1px #fff;
+  border: 3px solid #fff;
+  border-radius: 8px;
+}
+
+.btn:hover {
+  box-shadow: 0 0 0 1px rgb(255, 196, 0);
+  border: 3px solid rgb(255, 238, 180);
+  transition: 250ms;
+}
