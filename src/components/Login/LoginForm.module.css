@@ -1,0 +1,14 @@
+.login {
+  display: flex;
+}
+
+.imagem {
+  flex: 1;
+  height: 100vh;
+  background: url("../../Assets/login.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.form {
+  flex: 1;
+}
