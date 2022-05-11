@@ -3,35 +3,41 @@ import Title from "../Geral/Title.js";
 import Input from "../Form/Input.js";
 import Button from "../Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
+import { TOKEN_POST, USER_GET } from "../../api.js";
 
 function LoginForm() {
   const username = useForm();
   const password = useForm();
 
-  const handleSubmit = (e) => {
+  React.useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    if (token) {
+      getUser(token);
+    }
+  }, []);
+
+  const getUser = async (token) => {
+    const { url, options } = USER_GET(token);
+    const response = await fetch(url, options);
+    const json = await response.json();
+    console.log(json);
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (username.validate() && password.validate()) {
-      async function getAPI() {
-        const api = await fetch(
-          "https://dogsapi.origamid.dev/json/jwt-auth/v1/token",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              username: username.value,
-              password: password.value,
-            }),
-          }
-        );
-        console.log(api);
-        const apiJSON = await api.json();
-        console.log(apiJSON);
-      }
+      const { url, options } = TOKEN_POST({
+        username: username.value,
+        password: password.value,
+      });
 
-      getAPI();
+      const response = await fetch(url, options);
+      const json = await response.json();
+      console.log(response);
+      console.log(json);
+      window.localStorage.setItem("token", json.token);
+      getUser(json.token);
     }
   };
 
