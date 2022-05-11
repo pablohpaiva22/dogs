@@ -1,5 +1,6 @@
 .login {
   display: flex;
+  align-items: center;
 }
 
 .imagem {
@@ -11,4 +12,5 @@
 
 .form {
   flex: 1;
+  padding: 40px;
 }
