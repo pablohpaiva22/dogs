@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./Input.module.css";
 
-const Input = ({ type, id, children, placeholder }) => {
-  const [value, setValue] = React.useState("");
-
+const Input = ({ type, id, children, value, setValue, placeholder }) => {
   return (
     <div className={styles.input}>
       <label htmlFor={id}>{children}</label>
