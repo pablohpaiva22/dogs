@@ -1,13 +1,15 @@
-.input {
+.wrapper {
   margin: 1rem 0;
 }
 
-label {
+.label {
   display: block;
-  margin: 6px 0;
+  font-size: 1rem;
+  line-height: 1;
+  padding-bottom: 0.5rem;
 }
 
-input {
+.input {
   display: block;
   width: 100%;
   padding: 0.8rem;
@@ -17,15 +19,16 @@ input {
   border: 2px solid #eee;
 }
 
-input:hover {
-  border-color: rgb(255, 196, 0);
+.input:hover,
+.input:focus {
+  border-color: var(--color-secondary);
   background: #fff;
   outline: none;
   transition: 450ms;
 }
 
-input:focus {
-  background: #fff;
-  outline: none;
-  border-color: rgb(255, 196, 0);
+.error {
+  color: #f31;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
 }
