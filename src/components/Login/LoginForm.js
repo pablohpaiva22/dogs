@@ -1,4 +1,7 @@
 import React from "react";
+import Title from "../Geral/Title.js";
+import Input from "../Form/Input.js";
+import Button from "../Form/Button.js";
 
 function LoginForm() {
   const [username, setUsername] = React.useState("");
@@ -28,25 +31,12 @@ function LoginForm() {
 
   return (
     <section onSubmit={handleSubmit}>
-      <h2>Login</h2>
+      <Title>Login</Title>
 
       <form action="">
-        <label htmlFor="username">Usuário</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={({ target }) => setUsername(target.value)}
-        />
-
-        <label htmlFor="password">Senha</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={({ target }) => setPassword(target.value)}
-        />
-        <button>Entrar</button>
+        <Input>Usuário</Input>
+        <Input>Senha</Input>
+        <Button>Entrar</Button>
       </form>
     </section>
   );
