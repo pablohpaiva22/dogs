@@ -33,9 +33,15 @@ function LoginForm() {
     <section onSubmit={handleSubmit}>
       <Title>Login</Title>
 
-      <form action="">
-        <Input>Usuário</Input>
-        <Input>Senha</Input>
+      <form>
+        <Input type="text" id="user" value={username} setValue={setUsername}>
+          Usuário
+        </Input>
+
+        <Input type="text" id="user" value={password} setValue={setPassword}>
+          Senha
+        </Input>
+
         <Button>Entrar</Button>
       </form>
     </section>
