@@ -3,41 +3,18 @@ import Title from "../Geral/Title.js";
 import Input from "../Form/Input.js";
 import Button from "../Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
-import { TOKEN_POST, USER_GET } from "../../api.js";
+import { UserContext } from "../../UserContext.js";
 
 function LoginForm() {
   const username = useForm();
   const password = useForm();
-
-  React.useEffect(() => {
-    const token = window.localStorage.getItem("token");
-    if (token) {
-      getUser(token);
-    }
-  }, []);
-
-  const getUser = async (token) => {
-    const { url, options } = USER_GET(token);
-    const response = await fetch(url, options);
-    const json = await response.json();
-    console.log(json);
-  };
+  const { userLogin } = React.useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (username.validate() && password.validate()) {
-      const { url, options } = TOKEN_POST({
-        username: username.value,
-        password: password.value,
-      });
-
-      const response = await fetch(url, options);
-      const json = await response.json();
-      console.log(response);
-      console.log(json);
-      window.localStorage.setItem("token", json.token);
-      getUser(json.token);
+      userLogin(username.value, password.value);
     }
   };
 
@@ -50,7 +27,7 @@ function LoginForm() {
           Usuário
         </Input>
 
-        <Input type="text" id="user" {...password}>
+        <Input type="text" id="senha" {...password}>
           Senha
         </Input>
 
