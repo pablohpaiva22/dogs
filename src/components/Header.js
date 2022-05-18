@@ -6,7 +6,7 @@ import { ReactComponent as Usuario } from "../Assets/usuario.svg";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
-  const { data, logOut } = React.useContext(UserContext);
+  const { data, logOut, loading } = React.useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -25,7 +25,11 @@ const Header = () => {
           </Link>
         ) : (
           <Link className={styles.loginButton} to="login">
-            Login / Criar
+            {loading ? (
+              <div className={styles.loadingIcon}></div>
+            ) : (
+              <div>Criar / Entrar</div>
+            )}
             <span>
               <Usuario />
             </span>

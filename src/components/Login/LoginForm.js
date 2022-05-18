@@ -8,7 +8,7 @@ import { UserContext } from "../../UserContext.js";
 function LoginForm() {
   const username = useForm();
   const password = useForm();
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, error } = React.useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,6 +32,10 @@ function LoginForm() {
         </Input>
 
         <Button>Entrar</Button>
+
+        {error && (
+          <p style={{ margin: "1rem 0", color: "red" }}>Dados incorretos.</p>
+        )}
       </form>
     </section>
   );
