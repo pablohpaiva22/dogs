@@ -4,6 +4,7 @@ import Input from "../Form/Input.js";
 import Button from "../Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
 import { UserContext } from "../../UserContext.js";
+import styles from "./LoginForm.module.css";
 
 function LoginForm() {
   const username = useForm();
@@ -19,7 +20,7 @@ function LoginForm() {
   };
 
   return (
-    <section onSubmit={handleSubmit}>
+    <section className={styles.formContent} onSubmit={handleSubmit}>
       <Title>Login</Title>
 
       <form>
