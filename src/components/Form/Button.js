@@ -3,12 +3,20 @@ import { UserContext } from "../../UserContext";
 import styles from "./Button.module.css";
 
 const Button = ({ children, ...props }) => {
-  const { login } = React.useContext(UserContext);
+  const { btnDisable } = React.useContext(UserContext);
 
   return (
-    <button disabled={login} {...props} className={styles.btn}>
-      {children}
-    </button>
+    <>
+      {btnDisable ? (
+        <button disabled={btnDisable} {...props} className={styles.btn}>
+          Carregando...
+        </button>
+      ) : (
+        <button disabled={btnDisable} {...props} className={styles.btn}>
+          {children}
+        </button>
+      )}
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ export const UserContext = React.createContext();
 
 export const UserStorage = ({ children }) => {
   const [data, setData] = React.useState(null);
-  const [login, setLogin] = React.useState(null);
+  const [btnDisable, setBtnDisable] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export const UserStorage = ({ children }) => {
 
       if (token) {
         try {
-          setLogin(false);
+          setBtnDisable(false);
           setError(null);
           setLoading(true);
           const { url, options } = TOKEN_VALIDATE_POST(token);
@@ -28,7 +28,7 @@ export const UserStorage = ({ children }) => {
           logOut();
         } finally {
           setLoading(false);
-          setLogin(false);
+          setBtnDisable(false);
         }
       }
     };
@@ -40,7 +40,7 @@ export const UserStorage = ({ children }) => {
     setData(null);
     setError(null);
     setLoading(false);
-    setLogin(false);
+    setBtnDisable(false);
     window.localStorage.removeItem("token");
   };
 
@@ -49,14 +49,14 @@ export const UserStorage = ({ children }) => {
     const response = await fetch(url, options);
     const json = await response.json();
     setData(json);
-    setLogin(true);
+    setBtnDisable(true);
   };
 
   const userLogin = async (username, password) => {
     try {
       setError(null);
       setLoading(true);
-      setLogin(true);
+      setBtnDisable(true);
       const { url, options } = TOKEN_POST({ username, password });
       const tokenRes = await fetch(url, options);
       if (!tokenRes.ok) throw new Error(`Error: Deu ruim`);
@@ -65,17 +65,17 @@ export const UserStorage = ({ children }) => {
       await getUser(token);
       navigate("/");
     } catch (erro) {
-      setLogin(false);
+      setBtnDisable(false);
       setError(true);
     } finally {
       setLoading(false);
-      setLogin(false);
+      setBtnDisable(false);
     }
   };
 
   return (
     <UserContext.Provider
-      value={{ userLogin, logOut, data, error, loading, login }}
+      value={{ userLogin, logOut, data, error, loading, btnDisable }}
     >
       {children}
     </UserContext.Provider>

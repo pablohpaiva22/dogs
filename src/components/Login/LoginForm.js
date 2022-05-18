@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../Geral/Title.js";
+import Title from "../Utilitarios/Title.js";
 import Input from "../Form/Input.js";
 import Button from "../Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
@@ -31,7 +31,7 @@ function LoginForm() {
           Senha
         </Input>
 
-        <Button disable="true">Entrar</Button>
+        <Button>Entrar</Button>
 
         {error && (
           <p style={{ margin: "1rem 0", color: "red" }}>Dados incorretos.</p>
