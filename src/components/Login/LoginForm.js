@@ -31,7 +31,7 @@ function LoginForm() {
           Senha
         </Input>
 
-        <Button>Entrar</Button>
+        <Button disable="true">Entrar</Button>
 
         {error && (
           <p style={{ margin: "1rem 0", color: "red" }}>Dados incorretos.</p>
