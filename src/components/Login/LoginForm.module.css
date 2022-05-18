@@ -1,3 +1,52 @@
 .formContent {
   max-width: 450px;
 }
+
+.error {
+  margin-top: 1rem;
+  color: red;
+}
+
+.passLost {
+  margin-top: 1rem;
+  padding: 24px 0;
+  color: #666;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.passLost::after {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: var(--color-principal);
+  position: absolute;
+  bottom: 22px;
+  left: 0;
+}
+
+.subtitle {
+  font-family: var(--type-second);
+  color: var(--color-principal);
+  font-size: 2rem;
+  margin-top: 40px;
+  position: relative;
+}
+
+.subtitle::after {
+  content: "";
+  width: 44px;
+  border-radius: 8px;
+  height: 8px;
+  background: #ddd;
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.text {
+  margin: 2rem 0 1rem 0;
+}

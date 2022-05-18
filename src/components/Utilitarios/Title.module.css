@@ -1,5 +1,6 @@
 .title {
   font-size: 3rem;
+  color: var(--color-principal);
   font-family: var(--type-second);
   margin: 1rem 0;
   position: relative;
