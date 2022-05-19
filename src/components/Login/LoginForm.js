@@ -25,13 +25,9 @@ function LoginForm() {
       <Title>Login</Title>
 
       <form>
-        <Input type="text" id="user" {...username}>
-          Usuário
-        </Input>
+        <Input type="text" id="user" label={"Usuário"} {...username} />
 
-        <Input type="text" id="senha" {...password}>
-          Senha
-        </Input>
+        <Input type="text" id="senha" label={"Usuário"} {...password} />
 
         {btnDisable ? (
           <Button disabled>Carregando...</Button>
