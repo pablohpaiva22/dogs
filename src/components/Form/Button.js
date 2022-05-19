@@ -1,5 +1,4 @@
 import React from "react";
-import { UserContext } from "../../UserContext";
 import styles from "./Button.module.css";
 
 const Button = ({ children, ...props }) => {

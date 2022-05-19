@@ -34,7 +34,7 @@ function LoginForm() {
         </Input>
 
         {btnDisable ? (
-          <Button disabled>Carregando</Button>
+          <Button disabled>Carregando...</Button>
         ) : (
           <Button>Entrar</Button>
         )}

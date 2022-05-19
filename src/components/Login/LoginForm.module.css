@@ -50,3 +50,9 @@
 .text {
   margin: 2rem 0 1rem 0;
 }
+
+@media (max-width: 640px) {
+  .formContent {
+    max-width: 520px;
+  }
+}
