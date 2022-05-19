@@ -10,10 +10,6 @@
   background-size: cover;
 }
 
-.form {
-  padding: 100px 20px 40px 40px;
-}
-
 @media (max-width: 640px) {
   .login {
     grid-template-columns: 1fr;

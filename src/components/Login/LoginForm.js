@@ -21,7 +21,7 @@ function LoginForm() {
   };
 
   return (
-    <section className={styles.formContent} onSubmit={handleSubmit}>
+    <div className={styles.formContent} onSubmit={handleSubmit}>
       <Title>Login</Title>
 
       <form>
@@ -51,7 +51,7 @@ function LoginForm() {
       <Link to="criar">
         <Button style={{ width: "110px" }}>Cadastro</Button>
       </Link>
-    </section>
+    </div>
   );
 }
 

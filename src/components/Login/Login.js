@@ -11,7 +11,7 @@ const Login = () => {
     <section className={styles.login}>
       <div className={`${styles.imagem}`}></div>
 
-      <div className={`${styles.form}`}>
+      <div>
         <Routes>
           <Route path="/" element={<LoginForm />} />
           <Route path="/login/criar" element={<LoginCreate />} />
