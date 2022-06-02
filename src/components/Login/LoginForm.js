@@ -21,13 +21,13 @@ function LoginForm() {
   };
 
   return (
-    <div className={styles.formContent} onSubmit={handleSubmit}>
+    <div className={`${styles.formContent} animeLeft`} onSubmit={handleSubmit}>
       <Title>Login</Title>
 
       <form>
         <Input type="text" id="user" label={"Usuário"} {...username} />
 
-        <Input type="text" id="senha" label={"Usuário"} {...password} />
+        <Input type="password" id="senha" label={"Senha"} {...password} />
 
         {btnDisable ? (
           <Button disabled>Carregando...</Button>

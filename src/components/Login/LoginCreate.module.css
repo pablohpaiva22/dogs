@@ -1,0 +1,10 @@
+.formContent {
+  max-width: 450px;
+  padding: 0 20px 100px 40px;
+}
+
+@media (max-width: 640px) {
+  .formContent {
+    max-width: 520px;
+  }
+}
