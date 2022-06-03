@@ -4,27 +4,34 @@ import Input from "../Utilitarios/Form/Input";
 import Button from "../Utilitarios/Form/Button";
 import styles from "./LoginCreate.module.css";
 import useForm from "../../Hooks/useForm";
-import { USER_POST } from "../../api";
+import { UserContext } from "../../UserContext";
 
 const LoginCreate = () => {
   const username = useForm();
   const email = useForm("email");
   const password = useForm();
+  const { createUser, error2, loading } = React.useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { url, options } = USER_POST({
+    if (
+      username.validate(username.value) === false ||
+      email.validate(username.value) === false ||
+      password.validate(username.value) === false
+    ) {
+      return true;
+    }
+
+    createUser({
       username: username.value,
       email: email.value,
       password: password.value,
     });
-    const response = await fetch(url, options);
-    console.log(response);
   };
 
   return (
-    <div className={styles.formContent}>
+    <div className={`${styles.formContent} animeLeft`}>
       <Title>Cadastre-se</Title>
 
       <form onSubmit={handleSubmit}>
@@ -32,7 +39,13 @@ const LoginCreate = () => {
         <Input label={"E-mail"} {...email} id={"email"} type={"email"} />
         <Input label={"Senha"} {...password} id={"pass"} type={"password"} />
 
-        <Button>Cadastrar</Button>
+        {loading ? (
+          <Button disabled>Carregando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
+
+        {error2 && <p className={styles.error}>E-mail já cadastrado</p>}
       </form>
     </div>
   );

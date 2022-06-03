@@ -1,6 +1,7 @@
 import React from "react";
 import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from "./api";
 import { useNavigate } from "react-router-dom";
+import { USER_POST } from "./api";
 
 export const UserContext = React.createContext();
 
@@ -9,6 +10,8 @@ export const UserStorage = ({ children }) => {
   const [btnDisable, setBtnDisable] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const [error2, setError2] = React.useState(null);
+
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -73,9 +76,39 @@ export const UserStorage = ({ children }) => {
     }
   };
 
+  const createUser = async ({ username, email, password }) => {
+    try {
+      setError2(false);
+      setLoading(true);
+      const { url, options } = USER_POST({
+        username,
+        email,
+        password,
+      });
+      const response = await fetch(url, options);
+      console.log(response);
+      if (!response.ok) throw new Error("Error: deu Ruim");
+      const json = await response.json();
+      console.log(json);
+    } catch (err) {
+      setError2(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <UserContext.Provider
-      value={{ userLogin, logOut, data, error, loading, btnDisable }}
+      value={{
+        userLogin,
+        logOut,
+        data,
+        error,
+        loading,
+        btnDisable,
+        error2,
+        createUser,
+      }}
     >
       {children}
     </UserContext.Provider>
