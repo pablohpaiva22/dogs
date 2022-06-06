@@ -4,30 +4,32 @@ import Input from "../Utilitarios/Form/Input";
 import Button from "../Utilitarios/Form/Button";
 import styles from "./LoginCreate.module.css";
 import useForm from "../../Hooks/useForm";
+import { USER_POST } from "../../api";
 import { UserContext } from "../../UserContext";
 
 const LoginCreate = () => {
   const username = useForm();
   const email = useForm("email");
   const password = useForm();
-  const { createUser, error2, loading } = React.useContext(UserContext);
+
+  const { userLogin } = React.useContext(UserContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      username.validate(username.value) === false ||
-      email.validate(username.value) === false ||
-      password.validate(username.value) === false
-    ) {
-      return true;
-    }
-
-    createUser({
+    const { url, options } = USER_POST({
       username: username.value,
       email: email.value,
       password: password.value,
     });
+
+    try {
+      const response = await fetch(url, options);
+      const json = await response.json();
+      if (json.ok) userLogin(username.value, password.value);
+    } catch {
+    } finally {
+    }
   };
 
   return (
@@ -39,13 +41,13 @@ const LoginCreate = () => {
         <Input label={"E-mail"} {...email} id={"email"} type={"email"} />
         <Input label={"Senha"} {...password} id={"pass"} type={"password"} />
 
-        {loading ? (
+        {false ? (
           <Button disabled>Carregando...</Button>
         ) : (
           <Button>Cadastrar</Button>
         )}
 
-        {error2 && <p className={styles.error}>E-mail já cadastrado</p>}
+        {false && <p className={styles.error}>E-mail já cadastrado</p>}
       </form>
     </div>
   );
