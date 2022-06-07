@@ -6,13 +6,14 @@ import styles from "./LoginCreate.module.css";
 import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";
 import { UserContext } from "../../UserContext";
+import useFetch from "../../Hooks/useFetch";
 
 const LoginCreate = () => {
   const username = useForm();
   const email = useForm("email");
-  const password = useForm();
-
+  const password = useForm("");
   const { userLogin } = React.useContext(UserContext);
+  const { error, loading, request } = useFetch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,13 +24,8 @@ const LoginCreate = () => {
       password: password.value,
     });
 
-    try {
-      const response = await fetch(url, options);
-      const json = await response.json();
-      if (json.ok) userLogin(username.value, password.value);
-    } catch {
-    } finally {
-    }
+    const { response } = await request(url, options);
+    if (response.ok) userLogin(username.value, password.value);
   };
 
   return (
@@ -37,17 +33,17 @@ const LoginCreate = () => {
       <Title>Cadastre-se</Title>
 
       <form onSubmit={handleSubmit}>
-        <Input label={"Usuário"} {...username} id={"username"} type={"text"} />
-        <Input label={"E-mail"} {...email} id={"email"} type={"email"} />
-        <Input label={"Senha"} {...password} id={"pass"} type={"password"} />
+        <Input label={"Usuário"} id={"username"} type={"text"} {...username} />
+        <Input label={"E-mail"} id={"email"} type={"email"} {...email} />
+        <Input label={"Senha"} id={"pass"} type={"password"} {...password} />
 
-        {false ? (
+        {loading ? (
           <Button disabled>Carregando...</Button>
         ) : (
           <Button>Cadastrar</Button>
         )}
 
-        {false && <p className={styles.error}>E-mail já cadastrado</p>}
+        {error && <p className={styles.error}>{error}</p>}
       </form>
     </div>
   );
