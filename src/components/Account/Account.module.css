@@ -1,0 +1,37 @@
+.containerConta {
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+}
+
+.navigation a {
+  display: flex;
+  padding: 0.4rem;
+  background: #eee;
+  border-radius: 4px;
+  border: 1px solid #eee;
+}
+
+.navigation a:hover {
+  background: #fff;
+  border: 1px solid black;
+  box-shadow: 0 0 0 3px #eee;
+  cursor: pointer;
+}
+
+.navigation a:focus {
+  background: #fff;
+  border: 1px solid var(--color-secondary);
+  box-shadow: 0 0 0 3px rgb(255, 238, 180);
+  cursor: pointer;
+}

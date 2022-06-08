@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login/Login";
+import Account from "./components/Account/Account";
 import { UserStorage } from "./UserContext";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
+            <Route path="/conta/*" element={<Account />} />
           </Routes>
 
           <Footer />
