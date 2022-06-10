@@ -9,6 +9,7 @@ export const UserStorage = ({ children }) => {
   const [btnDisable, setBtnDisable] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState(null);
+  const [login, setLogin] = React.useState(null);
 
   const navigate = useNavigate();
 
@@ -42,6 +43,7 @@ export const UserStorage = ({ children }) => {
     setError(null);
     setLoading(false);
     setBtnDisable(false);
+    setLogin(false);
     window.localStorage.removeItem("token");
   };
 
@@ -51,6 +53,7 @@ export const UserStorage = ({ children }) => {
     const json = await response.json();
     setData(json);
     setBtnDisable(true);
+    setLogin(true);
   };
 
   const userLogin = async (username, password) => {
@@ -71,6 +74,7 @@ export const UserStorage = ({ children }) => {
     } finally {
       setLoading(false);
       setBtnDisable(false);
+      setLogin(true);
     }
   };
 
@@ -83,6 +87,7 @@ export const UserStorage = ({ children }) => {
         error,
         loading,
         btnDisable,
+        login,
       }}
     >
       {children}

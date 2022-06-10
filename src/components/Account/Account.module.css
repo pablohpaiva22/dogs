@@ -24,14 +24,17 @@
 
 .navigation a:hover {
   background: #fff;
-  border: 1px solid black;
+  border: 1px solid var(--color-principal);
   box-shadow: 0 0 0 3px #eee;
   cursor: pointer;
 }
 
-.navigation a:focus {
-  background: #fff;
+.navigation a:global(.active) {
   border: 1px solid var(--color-secondary);
   box-shadow: 0 0 0 3px rgb(255, 238, 180);
-  cursor: pointer;
+  background: #fff;
+}
+
+.navigation a:global(.active) svg > * {
+  fill: var(--color-secondary);
 }

@@ -1,37 +1,33 @@
 import React from "react";
-import Title from "../Utilitarios/Title";
+import AccountTitle from "../Utilitarios/AccountTitle";
 import { ReactComponent as FeedButton } from "../../Assets/feed.svg";
 import { ReactComponent as EstatisticaButton } from "../../Assets/estatisticas.svg";
 import { ReactComponent as PostarButton } from "../../Assets/adicionar.svg";
 import { ReactComponent as SairButton } from "../../Assets/sair.svg";
 import styles from "../Account/Account.module.css";
-import { NavLink } from "react-router-dom";
-// import { UserContext } from "../../UserContext";
+import { NavLink, useNavigate } from "react-router-dom";
+import { UserContext } from "../../UserContext";
 import { Routes, Route } from "react-router-dom";
 import AccountPost from "./AccountPost";
 import AccountStatistics from "./AccountStatistics";
 import AccountProfile from "./AccountProfile";
 
 const Account = () => {
-  // const { logOut } = React.useContext(UserContext);
-  // const navigate = useNavigate();
+  const { logOut } = React.useContext(UserContext);
+  const navigate = useNavigate();
 
-  // const handleSairClick = (e) => {
-  //   logOut();
-  //   navigate("/login");
-  // };
+  const handleClick = (e) => {
+    logOut();
+    navigate("/login");
+  };
 
   return (
     <section className={`container ${styles.containerConta}`}>
       <header className={styles.header}>
-        <Routes>
-          <Route path="/" element={<Title>Minha Conta</Title>} />
-          <Route path="/postar" element={<Title>Poste Sua Foto</Title>} />
-          <Route path="/estatistica" element={<Title>Estatísticas</Title>} />
-        </Routes>
+        <AccountTitle />
 
         <nav className={styles.navigation}>
-          <NavLink to="/conta">
+          <NavLink to="/conta" end>
             <FeedButton />
           </NavLink>
 
@@ -43,7 +39,7 @@ const Account = () => {
             <PostarButton />
           </NavLink>
 
-          <NavLink to="/">
+          <NavLink onClick={handleClick} to="/">
             <SairButton />
           </NavLink>
         </nav>
