@@ -25,7 +25,7 @@ const AccountPost = () => {
   };
 
   React.useEffect(() => {
-    if (data) navigate("conta");
+    if (data) navigate("/conta");
   }, [data, navigate]);
 
   const handleSubmit = async (e) => {
