@@ -19,6 +19,10 @@
   animation: showModal 300ms normal;
 }
 
+.comment {
+  margin-top: 2rem;
+}
+
 @keyframes showModal {
   from {
     transform: scale(0.8);

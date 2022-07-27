@@ -11,6 +11,7 @@ const FeedPhotos = () => {
     const getphoto = async () => {
       const { url, options } = PHOTOS_GET({ page: 0, total: 6, user: 0 });
       const json = await request(url, options);
+      console.log(json);
     };
 
     getphoto();

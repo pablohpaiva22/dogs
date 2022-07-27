@@ -9,6 +9,7 @@ import { UserStorage } from "./UserContext";
 import ProtectedRoute from "./components/Utilitarios/ProtectedRoute";
 import Account from "./components/Account/Account";
 import Teste from "./components/Teste";
+import ShowDiv from "./components/ShowDiv";
 
 function App() {
   return (

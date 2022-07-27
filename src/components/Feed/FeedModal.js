@@ -20,7 +20,6 @@ const FeedModal = () => {
 
     async function modalFetch() {
       const fetchData = await request(url, options);
-      console.log(fetchData);
     }
 
     modalFetch();
@@ -43,7 +42,7 @@ const FeedModal = () => {
 
           <div className={styles.info}>
             <div className={styles.infoFirstInformation}>
-              <span>cat</span>
+              <span>@{data.photo.author}</span>
               <div>
                 <span className={`${styles.visualizacao}`}>
                   {data.photo.acessos}
@@ -57,6 +56,21 @@ const FeedModal = () => {
               <span>{`${data.photo.peso} Kg`}</span>
               <span>{`${data.photo.idade} anos`}</span>
             </div>
+
+            {data.comments.length !== 0 && (
+              <div className={styles.comment}>
+                {data.comments.map((item) => {
+                  return (
+                    <div key={item.comment_ID}>
+                      <span
+                        style={{ fontWeight: "bold" }}
+                      >{`${item.comment_author}: `}</span>
+                      <span>{item.comment_content}</span>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       )}
