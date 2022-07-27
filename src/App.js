@@ -8,6 +8,7 @@ import Login from "./components/Login/Login";
 import { UserStorage } from "./UserContext";
 import ProtectedRoute from "./components/Utilitarios/ProtectedRoute";
 import Account from "./components/Account/Account";
+import Teste from "./components/Teste";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Header />
 
           <Routes>
+            <Route path="/teste" element={<Teste />} />
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
             <Route

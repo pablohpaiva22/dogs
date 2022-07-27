@@ -11,6 +11,9 @@ export const UserStorage = ({ children }) => {
   const [error, setError] = React.useState(null);
   const [login, setLogin] = React.useState(null);
 
+  const [modal, setModal] = React.useState(false);
+  const [photoId, setPhotoId] = React.useState(null);
+
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -88,6 +91,10 @@ export const UserStorage = ({ children }) => {
         loading,
         btnDisable,
         login,
+        modal,
+        setModal,
+        photoId,
+        setPhotoId,
       }}
     >
       {children}

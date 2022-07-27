@@ -12,6 +12,7 @@ body {
   --color-secondary: #fb1;
   --color-text: #764701;
   font-family: var(--type-first);
+  position: relative;
 }
 
 a {

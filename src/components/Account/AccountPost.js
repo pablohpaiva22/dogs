@@ -21,7 +21,6 @@ const AccountPost = () => {
       preview: URL.createObjectURL(target.files[0]),
       raw: target.files[0],
     });
-    console.log(target.files);
   };
 
   React.useEffect(() => {
