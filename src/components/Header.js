@@ -4,10 +4,9 @@ import styles from "./Header.module.css";
 import { ReactComponent as Dogs } from "../Assets/dogs.svg";
 import { ReactComponent as Usuario } from "../Assets/usuario.svg";
 import { UserContext } from "../UserContext";
-import FeedModal from "./Feed/FeedModal";
 
 const Header = () => {
-  const { data, loading, modal } = React.useContext(UserContext);
+  const { data, loading } = React.useContext(UserContext);
 
   return (
     <header className={styles.header}>
@@ -36,8 +35,6 @@ const Header = () => {
           </Link>
         )}
       </nav>
-
-      {modal && <FeedModal />}
     </header>
   );
 };
