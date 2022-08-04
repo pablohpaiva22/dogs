@@ -4,7 +4,11 @@ import FeedModal from "./FeedModal";
 import { UserContext } from "../../UserContext";
 
 const Feed = () => {
-  const { modal } = React.useContext(UserContext);
+  const { modal, setModal } = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    setModal(false);
+  }, [setModal]);
 
   return (
     <section>
