@@ -10,8 +10,7 @@ const FeedPhotos = () => {
   React.useEffect(() => {
     const getphoto = async () => {
       const { url, options } = PHOTOS_GET({ page: 0, total: 6, user: 0 });
-      const json = await request(url, options);
-      console.log(json);
+      await request(url, options);
     };
 
     getphoto();
