@@ -66,7 +66,7 @@ const FeedModal = () => {
           </div>
 
           <div className={styles.info}>
-            <div>
+            <div className={styles.infoTop}>
               <div className={styles.infoFirstInformation}>
                 <Link
                   className={styles.linkProfile}
@@ -114,7 +114,7 @@ const FeedModal = () => {
                   value={value}
                   className={styles.commentBox}
                   cols="30"
-                  rows="2"
+                  rows="3"
                   placeholder="Comente..."
                 ></textarea>
 
