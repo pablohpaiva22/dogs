@@ -1,11 +1,11 @@
 import React from "react";
-import FeedPhotos from "./Feed/FeedPhotos";
 import styles from "./Home.module.css";
+import Feed from "./Feed/Feed";
 
 const Home = () => {
   return (
     <div className={styles.home}>
-      <FeedPhotos />
+      <Feed />
     </div>
   );
 };
