@@ -48,11 +48,10 @@ const FeedModal = () => {
 
     const { url, options } = COMMENT_POST(photoId, { comment: value });
 
-    await fetch(url, options);
-    setComment([
-      ...comment,
-      { comment_content: value, comment_author: logindata.data.nome },
-    ]);
+    const response = await fetch(url, options);
+    const json = await response.json();
+
+    setComment([...comment, json]);
 
     setValue("");
     setErro(false);
