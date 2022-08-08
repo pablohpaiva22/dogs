@@ -16,6 +16,7 @@ const FeedModal = () => {
   const logindata = React.useContext(UserContext);
   const { value, onChange, setValue } = useForm();
   const modalRef = useRef();
+  const [erro, setErro] = React.useState(false);
 
   const handleClick = (e) => {
     if (e.target === modalRef.current) setModal(false);
@@ -40,6 +41,11 @@ const FeedModal = () => {
   async function handleCommentSubmit(e) {
     e.preventDefault();
 
+    if (value.length === 0) {
+      setErro(true);
+      return false;
+    }
+
     const { url, options } = COMMENT_POST(photoId, { comment: value });
 
     await fetch(url, options);
@@ -47,7 +53,9 @@ const FeedModal = () => {
       ...comment,
       { comment_content: value, comment_author: logindata.data.nome },
     ]);
+
     setValue("");
+    setErro(false);
   }
 
   return (
@@ -105,23 +113,31 @@ const FeedModal = () => {
             </div>
 
             {login && (
-              <form
-                className={styles.commentsPOST}
-                onSubmit={handleCommentSubmit}
-              >
-                <textarea
-                  onChange={onChange}
-                  value={value}
-                  className={styles.commentBox}
-                  cols="30"
-                  rows="3"
-                  placeholder="Comente..."
-                ></textarea>
+              <div>
+                <form
+                  className={styles.commentsPOST}
+                  onSubmit={handleCommentSubmit}
+                >
+                  <textarea
+                    onChange={onChange}
+                    value={value}
+                    className={styles.commentBox}
+                    cols="30"
+                    rows="3"
+                    placeholder="Comente..."
+                  ></textarea>
 
-                <button className={styles.btn}>
-                  <img src={Enviar} alt="Enviar Button" />
-                </button>
-              </form>
+                  <button className={styles.btn}>
+                    <img src={Enviar} alt="Enviar Button" />
+                  </button>
+                </form>
+
+                {erro && (
+                  <p className={styles.erro} style={{ color: "red" }}>
+                    Preencha este campo.
+                  </p>
+                )}
+              </div>
             )}
           </div>
         </div>

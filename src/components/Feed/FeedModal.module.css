@@ -132,6 +132,10 @@
   width: 60px;
 }
 
+.erro {
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 1025px) {
   .modalBox {
     width: 500px;
