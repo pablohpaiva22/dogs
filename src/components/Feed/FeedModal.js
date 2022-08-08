@@ -13,7 +13,6 @@ const FeedModal = () => {
   const { data, loading, error, request } = useFetch();
   const [comment, setComment] = React.useState("");
   const { setModal, photoId, login } = React.useContext(UserContext);
-  const logindata = React.useContext(UserContext);
   const { value, onChange, setValue } = useForm();
   const modalRef = useRef();
   const [erro, setErro] = React.useState(false);
@@ -52,7 +51,7 @@ const FeedModal = () => {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    setComment((comments) => [...comment, json]);
+    setComment((comment) => [...comment, json]);
 
     setValue("");
   }
