@@ -128,8 +128,8 @@
   cursor: pointer;
 }
 
-.btn img {
-  width: 60px;
+.btn:hover svg path {
+  fill: var(--color-secondary);
 }
 
 .erro {

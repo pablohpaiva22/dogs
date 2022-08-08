@@ -7,7 +7,7 @@ import { COMMENT_POST, PHOTO_GET } from "../../api";
 import Title from "../Utilitarios/Title";
 import useForm from "../../Hooks/useForm";
 import { Link } from "react-router-dom";
-import Enviar from "../../Assets/enviar.svg";
+import { ReactComponent as Enviar } from "../../Assets/enviar.svg";
 
 const FeedModal = () => {
   const { data, loading, error, request } = useFetch();
@@ -16,10 +16,17 @@ const FeedModal = () => {
   const { value, onChange, setValue } = useForm();
   const modalRef = useRef();
   const [erro, setErro] = React.useState(false);
+  const commentSection = React.useRef(null);
 
   const handleClick = (e) => {
     if (e.target === modalRef.current) setModal(false);
   };
+
+  React.useEffect(() => {
+    if (comment) {
+      commentSection.current.scrollTop = 1000;
+    }
+  }, [comment]);
 
   React.useEffect(() => {
     const { url, options } = PHOTO_GET(photoId);
@@ -95,15 +102,17 @@ const FeedModal = () => {
               </div>
 
               {comment && (
-                <div className={styles.comments}>
+                <div ref={commentSection} className={styles.comments}>
                   {comment.map((item, index) => {
                     return (
-                      <div key={index}>
-                        <span
-                          style={{ fontWeight: "bold" }}
-                        >{`${item.comment_author}: `}</span>
-                        <span>{item.comment_content}</span>
-                      </div>
+                      <ul key={index}>
+                        <li>
+                          <span
+                            style={{ fontWeight: "bold" }}
+                          >{`${item.comment_author}: `}</span>
+                          <span>{item.comment_content}</span>
+                        </li>
+                      </ul>
                     );
                   })}
                 </div>
@@ -126,7 +135,7 @@ const FeedModal = () => {
                   ></textarea>
 
                   <button className={styles.btn}>
-                    <img src={Enviar} alt="Enviar Button" />
+                    <Enviar />
                   </button>
                 </form>
 
