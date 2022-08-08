@@ -40,6 +40,7 @@ const FeedModal = () => {
 
   async function handleCommentSubmit(e) {
     e.preventDefault();
+    setErro(false);
 
     if (value.length === 0) {
       setErro(true);
@@ -51,10 +52,9 @@ const FeedModal = () => {
     const response = await fetch(url, options);
     const json = await response.json();
 
-    setComment([...comment, json]);
+    setComment((comments) => [...comment, json]);
 
     setValue("");
-    setErro(false);
   }
 
   return (
