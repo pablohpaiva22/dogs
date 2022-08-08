@@ -9,7 +9,7 @@ import { UserStorage } from "./UserContext";
 import ProtectedRoute from "./components/Utilitarios/ProtectedRoute";
 import Account from "./components/Account/Account";
 import Teste from "./components/Teste";
-import ShowDiv from "./components/ShowDiv";
+import TesteX from "./components/TesteX";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
 
           <Routes>
             <Route path="/teste" element={<Teste />} />
+            <Route path="/testeX" element={<TesteX />} />
             <Route path="/" element={<Home />} />
             <Route path="/login/*" element={<Login />} />
             <Route
