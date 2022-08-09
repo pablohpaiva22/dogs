@@ -1,6 +1,7 @@
 .topInfo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .linkProfile {
@@ -14,4 +15,19 @@
   display: inline-block;
   margin-right: 0.25rem;
   background: url("../../../Assets/visualizacao-black.svg");
+}
+
+.delete {
+  background: #eee;
+  font-family: var(--type-first);
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  border: 1px solid #fff;
+}
+
+.delete:hover {
+  background: #fff;
+  border: 1px solid black;
 }

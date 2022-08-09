@@ -52,7 +52,7 @@ const FeedModal = () => {
 
           <div className={styles.social}>
             <div className={styles.info}>
-              <ModalTopInfo data={data} />
+              <ModalTopInfo data={data} photoId={photoId} />
 
               <Title>{data.photo.title}</Title>
 
