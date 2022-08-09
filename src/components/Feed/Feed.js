@@ -1,6 +1,6 @@
 import React from "react";
 import FeedPhotos from "./FeedPhotos";
-import FeedModal from "./FeedModal";
+import FeedModal from "./Modal/FeedModal";
 import { UserContext } from "../../UserContext";
 
 const Feed = () => {

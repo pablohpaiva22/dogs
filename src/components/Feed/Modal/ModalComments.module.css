@@ -1,0 +1,11 @@
+.comments {
+  margin-top: 2rem;
+  max-height: 17rem;
+  overflow: auto;
+}
+
+@media (max-width: 1025px) {
+  .comments {
+    max-height: 4.5rem;
+  }
+}

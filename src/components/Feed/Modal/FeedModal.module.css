@@ -29,7 +29,7 @@
   border-radius: 0.25rem 0 0 0.25rem;
 }
 
-.info {
+.social {
   background: #fff;
   padding: 1rem;
   border-radius: 0.25rem;
@@ -39,20 +39,11 @@
   gap: 1rem;
 }
 
-.infoTop {
+.info {
   padding: 1rem;
 }
 
-.infoFirstInformation {
-  display: flex;
-  justify-content: space-between;
-}
-
-.linkProfile {
-  color: #000;
-}
-
-.infoAnimals {
+.animalInfo {
   display: flex;
   gap: 2rem;
   font-size: 1.1rem;
@@ -61,12 +52,12 @@
   margin-left: 0.3rem;
 }
 
-.infoAnimals span {
+.animalInfo span {
   display: block;
   position: relative;
 }
 
-.infoAnimals span::before {
+.animalInfo span::before {
   content: "";
   width: 2px;
   height: 24px;
@@ -76,66 +67,6 @@
   top: -2px;
 }
 
-.visualizacao::before {
-  width: 16px;
-  height: 10px;
-  content: "";
-  display: inline-block;
-  margin-right: 0.25rem;
-  background: url("../../Assets/visualizacao-black.svg");
-}
-
-.comments {
-  margin-top: 2rem;
-  max-height: 17rem;
-  overflow: auto;
-}
-
-.commentsPOST {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.commentsPOST form {
-  flex: 1;
-}
-
-.commentBox {
-  width: 100%;
-  flex: 1 1 auto;
-  border-radius: 0.4rem;
-  background: #eee;
-  border: none;
-  border: 2px solid #eee;
-  font-family: var(--type-first);
-  font-size: 1rem;
-  resize: none;
-}
-
-.commentBox:hover,
-.commentBox:focus {
-  border-color: var(--color-secondary);
-  background: #fff;
-  outline: none;
-  transition: 450ms;
-}
-
-.btn {
-  background: transparent;
-  padding: 0;
-  border: none;
-  cursor: pointer;
-}
-
-.btn:hover svg path {
-  fill: var(--color-secondary);
-}
-
-.erro {
-  margin-top: 0.5rem;
-}
-
 @media (max-width: 1025px) {
   .modalBox {
     width: 500px;
@@ -143,12 +74,6 @@
   }
   .photo img {
     border-radius: 0.25rem 0.25rem 0 0;
-  }
-  .comments {
-    max-height: 4.5rem;
-  }
-  .comment {
-    min-height: 0;
   }
 }
 

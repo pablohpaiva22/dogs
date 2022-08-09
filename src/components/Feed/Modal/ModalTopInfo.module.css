@@ -1,0 +1,17 @@
+.topInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.linkProfile {
+  color: #000;
+}
+
+.visualization::before {
+  width: 16px;
+  height: 10px;
+  content: "";
+  display: inline-block;
+  margin-right: 0.25rem;
+  background: url("../../../Assets/visualizacao-black.svg");
+}

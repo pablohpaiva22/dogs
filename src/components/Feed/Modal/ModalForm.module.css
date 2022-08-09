@@ -1,0 +1,40 @@
+.comment {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.commentBox {
+  width: 100%;
+  flex: 1 1 auto;
+  border-radius: 0.4rem;
+  background: #eee;
+  border: none;
+  border: 2px solid #eee;
+  font-family: var(--type-first);
+  font-size: 1rem;
+  resize: none;
+}
+
+.commentBox:hover,
+.commentBox:focus {
+  border-color: var(--color-secondary);
+  background: #fff;
+  outline: none;
+  transition: 450ms;
+}
+
+.commentButton {
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.commentButton:hover svg path {
+  fill: var(--color-secondary);
+}
+
+.error {
+  margin-top: 0.5rem;
+}
