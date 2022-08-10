@@ -24,7 +24,6 @@ const ModalForm = ({ setComments }) => {
       const { url, options } = COMMENT_POST(photoId, { comment: value });
       const response = await fetch(url, options);
       const json = await response.json();
-      console.log(json);
       if (!response.ok) throw new Error(json.message);
       setComments((comment) => [...comment, json]);
     } catch (err) {
