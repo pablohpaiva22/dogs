@@ -55,7 +55,7 @@ const ModalForm = ({ setComments }) => {
       {error && <p className={styles.error}>Preencha este campo.</p>}
 
       {notFound && (
-        <p className={styles.errinho}>Usuário não encontrado. Relogar</p>
+        <p className={styles.notfound}>Usuário não encontrado. Relogar</p>
       )}
     </div>
   );
