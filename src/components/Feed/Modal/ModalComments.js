@@ -6,7 +6,7 @@ const ModalComments = ({ comments }) => {
 
   React.useEffect(() => {
     if (comments) {
-      commentSection.current.scrollTop = 1000;
+      commentSection.current.scrollTop = 10000;
     }
   }, [comments]);
 

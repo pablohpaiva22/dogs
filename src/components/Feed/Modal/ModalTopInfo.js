@@ -7,7 +7,6 @@ import styles from "./ModalTopInfo.module.css";
 
 const ModalTopInfo = ({ data, photoId }) => {
   const user = React.useContext(UserContext);
-  console.log(user.login);
   const { loading, request } = useFetch();
 
   const handleClick = async () => {

@@ -35,6 +35,8 @@
   fill: var(--color-secondary);
 }
 
-.error {
+.error,
+.errinho {
   margin-top: 0.5rem;
+  color: red;
 }
