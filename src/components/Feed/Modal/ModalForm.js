@@ -27,7 +27,6 @@ const ModalForm = ({ setComments }) => {
       if (!response.ok) throw new Error(json.message);
       setComments((comment) => [...comment, json]);
     } catch (err) {
-      console.log(err);
       setNotFound(true);
     } finally {
       setValue("");
