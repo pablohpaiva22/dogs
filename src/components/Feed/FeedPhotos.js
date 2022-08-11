@@ -3,6 +3,7 @@ import { PHOTOS_GET } from "../../api";
 import useFetch from "../../Hooks/useFetch";
 import FeedPhotosItem from "./FeedPhotosItem";
 import styles from "./FeedPhotos.module.css";
+import Loading from "../Utilitarios/Loading";
 
 const FeedPhotos = () => {
   const { data, loading, request, error } = useFetch();
@@ -17,8 +18,7 @@ const FeedPhotos = () => {
   }, [request]);
 
   if (error) return <p className="container">error</p>;
-  if (loading)
-    return <p className={`container ${styles.loading}`}>Carregando...</p>;
+  if (loading) return <Loading />;
   if (data)
     return (
       <ul className={`container ${styles.photos}`}>

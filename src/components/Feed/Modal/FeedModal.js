@@ -9,6 +9,7 @@ import ModalTopInfo from "./ModalTopInfo";
 import ModalComments from "./ModalComments";
 import ModalForm from "./ModalForm";
 import Image from "../../Utilitarios/Image";
+import Loading from "../../Utilitarios/Loading";
 
 const FeedModal = () => {
   const { data, loading, error, request } = useFetch();
@@ -39,8 +40,7 @@ const FeedModal = () => {
   return (
     <section ref={modalRef} onClick={handleClick} className={styles.modal}>
       {error && <p style={{ color: "white" }}>Error.</p>}
-
-      {loading && <p style={{ color: "#fff" }}>Carregando...</p>}
+      {loading && <Loading />}
 
       {data && (
         <div className={styles.modalBox}>
