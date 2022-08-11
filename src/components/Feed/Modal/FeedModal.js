@@ -8,6 +8,7 @@ import Title from "../../Utilitarios/Title";
 import ModalTopInfo from "./ModalTopInfo";
 import ModalComments from "./ModalComments";
 import ModalForm from "./ModalForm";
+import Image from "../../Utilitarios/Image";
 
 const FeedModal = () => {
   const { data, loading, error, request } = useFetch();
@@ -44,7 +45,7 @@ const FeedModal = () => {
       {data && (
         <div className={styles.modalBox}>
           <div className={styles.photo}>
-            <img
+            <Image
               src={data.photo.src}
               alt={`foto de um cachorro chamado ${data.photo.title}`}
             />
