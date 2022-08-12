@@ -7,11 +7,6 @@
   align-items: end;
 }
 
-.loading {
-  text-align: center;
-  padding-top: 40vh;
-}
-
 @media (max-width: 40rem) {
   .photos {
     grid-template-columns: repeat(2, 1fr);
