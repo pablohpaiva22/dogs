@@ -5,12 +5,19 @@ import Button from "../Utilitarios/Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
 import { UserContext } from "../../UserContext.js";
 import styles from "./LoginForm.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginForm() {
   const username = useForm();
   const password = useForm();
-  const { userLogin, error, btnDisable } = React.useContext(UserContext);
+  const { userLogin, error, btnDisable, login } = React.useContext(UserContext);
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (login) {
+      navigate("/conta");
+    }
+  }, [login, navigate]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
