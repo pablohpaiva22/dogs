@@ -5,17 +5,17 @@ import FeedPhotosItem from "./FeedPhotosItem";
 import styles from "./FeedPhotos.module.css";
 import Loading from "../Utilitarios/Loading";
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ user }) => {
   const { data, loading, request, error } = useFetch();
 
   React.useEffect(() => {
     const getphoto = async () => {
-      const { url, options } = PHOTOS_GET({ page: 0, total: 6, user: 0 });
+      const { url, options } = PHOTOS_GET({ page: 0, total: 6, user });
       await request(url, options);
     };
 
     getphoto();
-  }, [request]);
+  }, [request, user]);
 
   if (error) return <p className="container">error</p>;
   if (loading) return <Loading />;

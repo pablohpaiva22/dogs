@@ -12,7 +12,7 @@ const Feed = () => {
 
   return (
     <section>
-      <FeedPhotos />
+      <FeedPhotos user={0} />
       {modal && <FeedModal />}
     </section>
   );
