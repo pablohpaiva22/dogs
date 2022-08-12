@@ -70,13 +70,11 @@ const Account = () => {
         </nav>
       </header>
 
-      <div>
-        <Routes>
-          <Route path="/" element={<AccountProfile />} />
-          <Route path="/postar" element={<AccountPost />} />
-          <Route path="/estatistica" element={<AccountStatistics />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<AccountProfile />} />
+        <Route path="/postar" element={<AccountPost />} />
+        <Route path="/estatistica" element={<AccountStatistics />} />
+      </Routes>
     </section>
   );
 };
