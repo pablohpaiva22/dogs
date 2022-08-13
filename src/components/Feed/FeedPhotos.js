@@ -1,20 +1,20 @@
 import React from "react";
-import { PHOTOS_GET } from "../../api";
+import styles from "./FeedPhotos.module.css";
 import useFetch from "../../Hooks/useFetch";
 import FeedPhotosItem from "./FeedPhotosItem";
-import styles from "./FeedPhotos.module.css";
 import Loading from "../Utilitarios/Loading";
+import { PHOTOS_GET } from "../../api";
 
 const FeedPhotos = ({ user }) => {
   const { data, loading, request, error } = useFetch();
 
   React.useEffect(() => {
-    const getphoto = async () => {
+    const getPhotos = async () => {
       const { url, options } = PHOTOS_GET({ page: 0, total: 6, user });
       await request(url, options);
     };
 
-    getphoto();
+    getPhotos();
   }, [request, user]);
 
   if (error) return <p className="container">error</p>;

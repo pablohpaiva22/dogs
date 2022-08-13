@@ -11,10 +11,10 @@ const Feed = () => {
   }, [setModal]);
 
   return (
-    <section>
+    <>
       <FeedPhotos user={0} />
       {modal && <FeedModal />}
-    </section>
+    </>
   );
 };
 

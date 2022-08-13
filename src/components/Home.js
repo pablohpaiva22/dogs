@@ -4,9 +4,9 @@ import Feed from "./Feed/Feed";
 
 const Home = () => {
   return (
-    <div className={styles.home}>
+    <section className={styles.home}>
       <Feed />
-    </div>
+    </section>
   );
 };
 
