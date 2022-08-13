@@ -7,7 +7,7 @@ const Loading = () => {
   React.useState(() => {
     function updateStep() {
       setStep((step) => {
-        if (step < 3) return step + 1;
+        if (step < 4) return step + 1;
         else return 0;
       });
     }
@@ -27,7 +27,7 @@ const Loading = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g style={{ display: step === 0 ? "block" : "none" }}>
+          <g style={{ display: step === 1 ? "block" : "none" }}>
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -35,7 +35,7 @@ const Loading = () => {
               fill="#333"
             />
           </g>
-          <g style={{ display: step === 1 ? "block" : "none" }}>
+          <g style={{ display: step === 2 ? "block" : "none" }}>
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -56,7 +56,7 @@ const Loading = () => {
               fill="#333"
             />
           </g>
-          <g style={{ display: step === 2 ? "block" : "none" }}>
+          <g style={{ display: step === 3 ? "block" : "none" }}>
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -76,7 +76,7 @@ const Loading = () => {
               fill="#333"
             />
           </g>
-          <g style={{ display: step === 3 ? "block" : "none" }}>
+          <g style={{ display: step === 4 ? "block" : "none" }}>
             <path
               fillRule="evenodd"
               clipRule="evenodd"
