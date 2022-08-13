@@ -4,10 +4,10 @@ import Input from "../Utilitarios/Form/Input.js";
 import Button from "../Utilitarios/Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
 import { UserContext } from "../../UserContext.js";
-import styles from "./LoginForm.module.css";
+import styles from "./LoginSignIn.module.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function LoginForm() {
+function LoginSignIn() {
   const username = useForm();
   const password = useForm();
   const { userLogin, error, btnDisable, login } = React.useContext(UserContext);
@@ -62,4 +62,4 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+export default LoginSignIn;

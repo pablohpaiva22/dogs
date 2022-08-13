@@ -2,13 +2,13 @@ import React from "react";
 import Title from "../Utilitarios/Title";
 import Input from "../Utilitarios/Form/Input";
 import Button from "../Utilitarios/Form/Button";
-import styles from "./LoginCreate.module.css";
+import styles from "./LoginNewUser.module.css";
 import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";
 import { UserContext } from "../../UserContext";
 import useFetch from "../../Hooks/useFetch";
 
-const LoginCreate = () => {
+const LoginNewUser = () => {
   const username = useForm();
   const email = useForm("email");
   const password = useForm("");
@@ -49,4 +49,4 @@ const LoginCreate = () => {
   );
 };
 
-export default LoginCreate;
+export default LoginNewUser;
