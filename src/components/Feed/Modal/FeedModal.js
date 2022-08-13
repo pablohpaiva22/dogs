@@ -24,11 +24,11 @@ const FeedModal = () => {
   React.useEffect(() => {
     const { url, options } = PHOTO_GET(photoId);
 
-    async function modalFetch() {
+    async function getPhoto() {
       await request(url, options);
     }
 
-    modalFetch();
+    getPhoto();
   }, [photoId, request]);
 
   React.useEffect(() => {
