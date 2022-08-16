@@ -10,6 +10,7 @@ const ModalForm = ({ setComments }) => {
   const [error, setError] = React.useState(false);
   const { photoId } = React.useContext(UserContext);
   const [notFound, setNotFound] = React.useState(false);
+  const [disable, setDisable] = React.useState(false);
 
   async function handleCommentSubmit(e) {
     e.preventDefault();
@@ -22,15 +23,18 @@ const ModalForm = ({ setComments }) => {
 
     try {
       setNotFound(false);
+      setDisable(true);
       const { url, options } = COMMENT_POST(photoId, { comment: value });
       const response = await fetch(url, options);
-      const json = await response.json();
-      if (!response.ok) throw new Error(json.message);
-      setComments((comment) => [...comment, json]);
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.message);
+      setComments((comment) => [...comment, data]);
     } catch (err) {
+      setDisable(false);
       setNotFound(true);
     } finally {
       setValue("");
+      setDisable(false);
     }
   }
 
@@ -46,9 +50,15 @@ const ModalForm = ({ setComments }) => {
           placeholder="Comente..."
         ></textarea>
 
-        <button className={styles.commentButton}>
-          <Enviar />
-        </button>
+        {disable ? (
+          <button disabled className={styles.commentButton}>
+            <Enviar />
+          </button>
+        ) : (
+          <button className={styles.commentButton}>
+            <Enviar />
+          </button>
+        )}
       </form>
 
       {error && <p className={styles.error}>Preencha este campo.</p>}
