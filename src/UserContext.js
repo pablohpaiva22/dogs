@@ -66,7 +66,6 @@ export const UserStorage = ({ children }) => {
       setBtnDisable(true);
       const { url, options } = TOKEN_POST({ username, password });
       const response = await fetch(url, options);
-      console.log(response.ok);
       if (!response.ok) throw new Error(`Error: Deu ruim`);
       const { token } = await response.json();
       window.localStorage.setItem("token", token);
