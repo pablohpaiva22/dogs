@@ -65,19 +65,20 @@ export const UserStorage = ({ children }) => {
       setLoading(true);
       setBtnDisable(true);
       const { url, options } = TOKEN_POST({ username, password });
-      const tokenRes = await fetch(url, options);
-      if (!tokenRes.ok) throw new Error(`Error: Deu ruim`);
-      const { token } = await tokenRes.json();
+      const response = await fetch(url, options);
+      console.log(response.ok);
+      if (!response.ok) throw new Error(`Error: Deu ruim`);
+      const { token } = await response.json();
       window.localStorage.setItem("token", token);
       await getUser(token);
       navigate("/conta");
+      setLogin(true);
     } catch (erro) {
       setBtnDisable(false);
       setError(true);
     } finally {
       setLoading(false);
       setBtnDisable(false);
-      setLogin(true);
     }
   };
 

@@ -28,10 +28,10 @@ function LoginSignIn() {
   };
 
   return (
-    <div className={`${styles.formContent} animeLeft`} onSubmit={handleSubmit}>
+    <div className={`${styles.formContent} animeLeft`}>
       <Title>Login</Title>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <Input type="text" id="user" label={"Usuário"} {...username} />
 
         <Input type="password" id="senha" label={"Senha"} {...password} />
