@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Login from "./components/Login/Login";
 import { UserStorage } from "./UserContext";
-import ProtectedRoute from "./components/Utilitarios/ProtectedRoute";
+import ProtectedRoute from "./components/Utilities/ProtectedRoute";
 import Account from "./components/Account/Account";
 
 function App() {

@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { UserContext } from "../../../UserContext";
 import { PHOTO_GET } from "../../../api";
 import useFetch from "../../../Hooks/useFetch";
-import Title from "../../Utilitarios/Title";
+import Title from "../../Utilities/Title";
 import ModalTopInfo from "./ModalTopInfo";
 import ModalComments from "./ModalComments";
 import ModalForm from "./ModalForm";
-import Image from "../../Utilitarios/Image";
-import Loading from "../../Utilitarios/Loading";
+import Image from "../../Utilities/Image";
+import Loading from "../../Utilities/Loading";
 
 const FeedModal = () => {
   const { data, loading, error, request } = useFetch();

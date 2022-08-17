@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "../Utilitarios/Title";
-import Input from "../Utilitarios/Form/Input";
-import Button from "../Utilitarios/Form/Button";
+import Title from "../Utilities/Title";
+import Input from "../Utilities/Form/Input";
+import Button from "../Utilities/Form/Button";
 import styles from "./LoginNewUser.module.css";
 import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";

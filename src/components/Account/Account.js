@@ -1,5 +1,5 @@
 import React from "react";
-import AccountTitle from "../Utilitarios/AccountTitle";
+import AccountTitle from "../Utilities/AccountTitle";
 import { ReactComponent as FeedButton } from "../../Assets/feed.svg";
 import { ReactComponent as EstatisticaButton } from "../../Assets/estatisticas.svg";
 import { ReactComponent as PostarButton } from "../../Assets/adicionar.svg";

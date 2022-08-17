@@ -1,7 +1,7 @@
 import React from "react";
 import { UserContext } from "../../UserContext";
 import styles from "./FeedPhotosItem.module.css";
-import Image from "../Utilitarios/Image";
+import Image from "../Utilities/Image";
 
 const FeedPhotosItem = ({ photo }) => {
   const { setModal, setPhotoId } = React.useContext(UserContext);

@@ -1,7 +1,7 @@
 import React from "react";
-import Title from "../Utilitarios/Title.js";
-import Input from "../Utilitarios/Form/Input.js";
-import Button from "../Utilitarios/Form/Button.js";
+import Title from "../Utilities/Title.js";
+import Input from "../Utilities/Form/Input.js";
+import Button from "../Utilities/Form/Button.js";
 import useForm from "../../Hooks/useForm.js";
 import { UserContext } from "../../UserContext.js";
 import styles from "./LoginSignIn.module.css";

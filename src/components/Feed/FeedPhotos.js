@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./FeedPhotos.module.css";
 import useFetch from "../../Hooks/useFetch";
 import FeedPhotosItem from "./FeedPhotosItem";
-import Loading from "../Utilitarios/Loading";
+import Loading from "../Utilities/Loading";
 import { PHOTOS_GET } from "../../api";
 
 const FeedPhotos = ({ user, pageNumber, setInfinite }) => {
