@@ -41,12 +41,12 @@ const Feed = () => {
 
   return (
     <>
-      {pages.map((item, index) => {
+      {pages.map((page) => {
         return (
           <FeedPhotos
-            key={index}
+            key={page}
             user={0}
-            pageNumber={item}
+            pageNumber={page}
             setInfinite={setInfinite}
           />
         );

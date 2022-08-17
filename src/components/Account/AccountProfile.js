@@ -5,7 +5,11 @@ import FeedPhotos from "../Feed/FeedPhotos";
 const AccountProfile = () => {
   const { data } = React.useContext(UserContext);
 
-  return <FeedPhotos user={data.id} />;
+  return (
+    <div>
+      <FeedPhotos user={data.id} />
+    </div>
+  );
 };
 
 export default AccountProfile;

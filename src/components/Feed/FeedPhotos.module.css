@@ -1,8 +1,7 @@
 .photos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 274px;
-  grid-row: 300px;
+  grid-template-rows: repeat(3, 274px);
   gap: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -11,5 +10,6 @@
 @media (max-width: 40rem) {
   .photos {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: initial;
   }
 }
