@@ -1,10 +1,6 @@
 import React from "react";
-import FeedPhotos from "./FeedPhotos";
-import FeedModal from "./Modal/FeedModal";
-import { UserContext } from "../../UserContext";
 
-const Feed = () => {
-  const { modal, setModal } = React.useContext(UserContext);
+const useInfiniteScroll = () => {
   const [pages, setPages] = React.useState([0]);
   const [inifite, setInfinite] = React.useState(true);
 
@@ -33,23 +29,9 @@ const Feed = () => {
       window.removeEventListener("scroll", infiniteScroll);
       window.removeEventListener("wheel", infiniteScroll);
     };
-  }, [inifite, pages]);
+  }, [inifite]);
 
-  React.useEffect(() => {
-    setModal(false);
-  }, [setModal]);
-
-  return (
-    <>
-      {pages.map((page) => {
-        return (
-          <FeedPhotos key={page} pageNumber={page} setInfinite={setInfinite} />
-        );
-      })}
-
-      {modal && <FeedModal />}
-    </>
-  );
+  return { pages, setInfinite };
 };
 
-export default Feed;
+export default useInfiniteScroll;
