@@ -4,12 +4,12 @@ import { useRef } from "react";
 import { UserContext } from "../../../UserContext";
 import { PHOTO_GET } from "../../../api";
 import useFetch from "../../../Hooks/useFetch";
-import Title from "../../Utilities/Title";
 import ModalTopInfo from "./ModalTopInfo";
 import ModalComments from "./ModalComments";
 import ModalForm from "./ModalForm";
 import Image from "../../Utilities/Image";
 import Loading from "../../Utilities/Loading";
+import { Link } from "react-router-dom";
 
 const FeedModal = () => {
   const { data, loading, error, request } = useFetch();
@@ -55,7 +55,9 @@ const FeedModal = () => {
             <div className={styles.info}>
               <ModalTopInfo data={data} photoId={photoId} />
 
-              <Title>{data.photo.title}</Title>
+              <Link className={styles.title} to={`/foto/${data.photo.id}`}>
+                {data.photo.title}
+              </Link>
 
               <div className={styles.animalInfo}>
                 <span>{`${data.photo.peso} Kg`}</span>
