@@ -10,7 +10,7 @@ import { UserContext } from "../../UserContext";
 import { Routes, Route } from "react-router-dom";
 import AccountPost from "./AccountPost";
 import AccountStatistics from "./AccountStatistics";
-import AccountProfile from "./AccountProfile";
+import AccountMyAccount from "./AccountMyAccount";
 import useMedia from "../../Hooks/useMedia";
 
 const Account = () => {
@@ -71,7 +71,7 @@ const Account = () => {
       </header>
 
       <Routes>
-        <Route path="/" element={<AccountProfile />} />
+        <Route path="/" element={<AccountMyAccount />} />
         <Route path="/postar" element={<AccountPost />} />
         <Route path="/estatistica" element={<AccountStatistics />} />
       </Routes>

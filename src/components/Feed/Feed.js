@@ -4,7 +4,7 @@ import FeedPhotos from "./FeedPhotos";
 import FeedModal from "./Modal/FeedModal";
 import { UserContext } from "../../UserContext";
 
-const Feed = () => {
+const Feed = ({ user }) => {
   const { modal, setModal } = React.useContext(UserContext);
   const [pages, setPages] = React.useState([0]);
   const [infinite, setInfinite] = React.useState(true);
@@ -44,7 +44,12 @@ const Feed = () => {
     <>
       {pages.map((page) => {
         return (
-          <FeedPhotos key={page} pageNumber={page} setInfinite={setInfinite} />
+          <FeedPhotos
+            user={user}
+            key={page}
+            pageNumber={page}
+            setInfinite={setInfinite}
+          />
         );
       })}
 
