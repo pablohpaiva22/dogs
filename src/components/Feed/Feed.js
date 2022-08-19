@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Feed.module.css";
 import FeedPhotos from "./FeedPhotos";
 import FeedModal from "./Modal/FeedModal";
 import { UserContext } from "../../UserContext";
@@ -6,18 +7,18 @@ import { UserContext } from "../../UserContext";
 const Feed = () => {
   const { modal, setModal } = React.useContext(UserContext);
   const [pages, setPages] = React.useState([0]);
-  const [inifite, setInfinite] = React.useState(true);
+  const [infinite, setInfinite] = React.useState(true);
 
   React.useEffect(() => {
     let wait = false;
 
     function infiniteScroll() {
-      if (inifite) {
+      if (infinite) {
         const scroll = window.scrollY;
         const height = document.body.offsetHeight - window.innerHeight;
 
         if (scroll > height * 0.9 && !wait) {
-          setPages((pages) => [...pages, pages.length + 1]);
+          setPages((pages) => [...pages, pages.length]);
           wait = true;
           setTimeout(() => {
             wait = false;
@@ -33,7 +34,7 @@ const Feed = () => {
       window.removeEventListener("scroll", infiniteScroll);
       window.removeEventListener("wheel", infiniteScroll);
     };
-  }, [inifite, pages]);
+  }, [infinite, pages]);
 
   React.useEffect(() => {
     setModal(false);
@@ -46,6 +47,8 @@ const Feed = () => {
           <FeedPhotos key={page} pageNumber={page} setInfinite={setInfinite} />
         );
       })}
+
+      {!infinite && <p className={styles.text}>Não existem mais postagens.</p>}
 
       {modal && <FeedModal />}
     </>
