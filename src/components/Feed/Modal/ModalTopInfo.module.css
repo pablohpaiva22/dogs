@@ -5,7 +5,11 @@
 }
 
 .linkProfile {
-  color: #000;
+  color: #999;
+}
+
+.linkProfile:hover {
+  color: #333;
 }
 
 .visualization::before {
