@@ -10,12 +10,18 @@ const FeedPhotos = ({ user, pageNumber, setInfinite }) => {
   const photosContent = React.useRef(null);
 
   React.useEffect(() => {
+    if (photosContent.current && data.length === 0) {
+      photosContent.current.style.display = "none";
+    }
+
     if (photosContent.current && data.length < 3) {
       photosContent.current.style.gridTemplateRows = `repeat(${data.length}, 274px)`;
+    }
 
-      if (data.length === 0) {
-        photosContent.current.style.display = "none";
-      }
+    if (photosContent.current && data.length === 3) {
+      photosContent.current.style.gridTemplateRows = `repeat(${
+        data.length - 1
+      }, 274px)`;
     }
   });
 

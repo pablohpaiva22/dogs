@@ -10,6 +10,6 @@
 @media (max-width: 40rem) {
   .photos {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: initial;
+    grid-template-rows: repeat(3, auto);
   }
 }
