@@ -6,8 +6,12 @@ import { UserContext } from "../../UserContext";
 
 const Feed = ({ user }) => {
   const { modal, setModal } = React.useContext(UserContext);
-  const [pages, setPages] = React.useState([0]);
+  const [pages, setPages] = React.useState([1]);
   const [infinite, setInfinite] = React.useState(true);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   React.useEffect(() => {
     let wait = false;
@@ -18,7 +22,7 @@ const Feed = ({ user }) => {
         const height = document.body.offsetHeight - window.innerHeight;
 
         if (scroll > height * 0.9 && !wait) {
-          setPages((pages) => [...pages, pages.length]);
+          setPages((pages) => [...pages, pages.length + 1]);
           wait = true;
           setTimeout(() => {
             wait = false;
@@ -34,7 +38,7 @@ const Feed = ({ user }) => {
       window.removeEventListener("scroll", infiniteScroll);
       window.removeEventListener("wheel", infiniteScroll);
     };
-  }, [infinite, pages]);
+  }, [infinite]);
 
   React.useEffect(() => {
     setModal(false);
