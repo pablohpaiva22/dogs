@@ -4,11 +4,20 @@ import useFetch from "../../Hooks/useFetch";
 import FeedPhotosItem from "./FeedPhotosItem";
 import Loading from "../Utilities/Loading";
 import { PHOTOS_GET } from "../../api";
-import { useRef } from "react";
 
 const FeedPhotos = ({ user, pageNumber, setInfinite }) => {
   const { data, loading, request, error } = useFetch();
-  const photosContent = useRef(null);
+  const photosContent = React.useRef(null);
+
+  React.useEffect(() => {
+    if (photosContent.current && data.length < 3) {
+      photosContent.current.style.gridTemplateRows = `repeat(${data.length}, 274px)`;
+
+      if (data.length === 0) {
+        photosContent.current.style.display = "none";
+      }
+    }
+  });
 
   React.useEffect(() => {
     const getPhotos = async () => {
