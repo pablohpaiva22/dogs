@@ -57,7 +57,7 @@ const AccountPost = () => {
           name="img"
         />
         {loading ? (
-          <Button disabled>Carregando</Button>
+          <Button disabled>Carregando...</Button>
         ) : (
           <Button>Enviar</Button>
         )}
