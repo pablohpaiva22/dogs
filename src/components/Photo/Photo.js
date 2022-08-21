@@ -7,7 +7,7 @@ import ModalTopInfo from "../Feed/Modal/ModalTopInfo";
 import ModalComments from "../Feed/Modal/ModalComments";
 import ModalForm from "../Feed/Modal/ModalForm";
 import { UserContext } from "../../UserContext";
-import Loading from "..//Utilities/Loading";
+import Loading from "../Utilities/Loading";
 
 const Photo = () => {
   const { id } = useParams();
