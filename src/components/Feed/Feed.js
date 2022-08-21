@@ -51,7 +51,7 @@ const Feed = ({ user }) => {
           <FeedPhotos
             user={user}
             key={page}
-            pageNumber={page}
+            page={page}
             setInfinite={setInfinite}
           />
         );
