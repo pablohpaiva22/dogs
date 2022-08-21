@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import LoginSignIn from "./LoginSignIn";
 import LoginNewUser from "./LoginNewUser";
 import LoginPasswordLost from "./LoginPasswordLost";
@@ -7,6 +7,12 @@ import LoginPasswordReset from "./LoginPasswordReset";
 import styles from "./Login.module.css";
 
 const Login = () => {
+  const { pathname } = useLocation();
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <section className={styles.login}>
       <div className={`${styles.imagem}`}></div>
