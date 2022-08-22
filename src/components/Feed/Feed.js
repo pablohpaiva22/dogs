@@ -3,6 +3,7 @@ import styles from "./Feed.module.css";
 import FeedPhotos from "./FeedPhotos";
 import FeedModal from "./Modal/FeedModal";
 import { UserContext } from "../../UserContext";
+import PropTypes from "prop-types";
 
 const Feed = ({ user }) => {
   const { modal, setModal } = React.useContext(UserContext);
@@ -62,6 +63,14 @@ const Feed = ({ user }) => {
       {modal && <FeedModal />}
     </>
   );
+};
+
+Feed.defaultProps = {
+  user: 0,
+};
+
+Feed.propTypes = {
+  user: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 export default Feed;
