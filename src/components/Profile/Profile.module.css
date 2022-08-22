@@ -1,0 +1,28 @@
+.container {
+  min-height: 100vh;
+  padding: 0;
+}
+
+.title {
+  font-size: 3rem;
+  padding: 0 1rem;
+  color: var(--color-principal);
+  font-family: var(--type-second);
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
+.title::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: var(--color-secondary);
+  border-radius: 4px;
+  position: absolute;
+  bottom: 4px;
+  left: 0.5rem;
+  z-index: -1;
+}
