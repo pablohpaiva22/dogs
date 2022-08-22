@@ -1,5 +1,5 @@
 import React from "react";
-import AccountTitle from "../Utilities/AccountTitle";
+import AccountTitle from "./AccountTitle";
 import { ReactComponent as FeedButton } from "../../Assets/feed.svg";
 import { ReactComponent as EstatisticaButton } from "../../Assets/estatisticas.svg";
 import { ReactComponent as PostarButton } from "../../Assets/adicionar.svg";
@@ -12,6 +12,7 @@ import AccountPost from "./AccountPost";
 import AccountStatistics from "./AccountStatistics";
 import AccountMyAccount from "./AccountMyAccount";
 import useMedia from "../../Hooks/useMedia";
+import NotFound from "../NotFound";
 
 const Account = () => {
   const { logOut } = React.useContext(UserContext);
@@ -74,6 +75,7 @@ const Account = () => {
         <Route path="/" element={<AccountMyAccount />} />
         <Route path="/postar" element={<AccountPost />} />
         <Route path="/estatistica" element={<AccountStatistics />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </section>
   );

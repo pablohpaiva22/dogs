@@ -8,7 +8,7 @@ const Profile = () => {
 
   return (
     <div className={`${styles.container} container`}>
-      <h1 className={styles.title}>{name}</h1>
+      <h1 className={`${styles.title} title`}>{name}</h1>
       <Feed user={name} />
     </div>
   );

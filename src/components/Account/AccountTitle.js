@@ -1,6 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import styles from "../Utilities/AccountTitle.module.css";
+import styles from "./AccountTitle.module.css";
 
 const AccountTitle = () => {
   const [title, setTitle] = React.useState();

@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "../Utilities/Title";
 import Input from "../Utilities/Form/Input";
 import Button from "../Utilities/Form/Button";
 import styles from "./LoginNewUser.module.css";
@@ -30,7 +29,7 @@ const LoginNewUser = () => {
 
   return (
     <div className={`${styles.formContent} animeLeft`}>
-      <Title>Cadastre-se</Title>
+      <h1 className="title">Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>
         <Input label={"Usuário"} id={"username"} type={"text"} {...username} />

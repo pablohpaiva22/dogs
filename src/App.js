@@ -10,6 +10,7 @@ import ProtectedRoute from "./components/Utilities/ProtectedRoute";
 import Account from "./components/Account/Account";
 import Photo from "./components/Photo/Photo";
 import Profile from "./components/Profile/Profile";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             />
             <Route path="/foto/:id" element={<Photo />} />
             <Route path="/profile/:name" element={<Profile />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
 
           <Footer />

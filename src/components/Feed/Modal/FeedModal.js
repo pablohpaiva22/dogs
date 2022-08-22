@@ -55,7 +55,10 @@ const FeedModal = () => {
             <div className={styles.info}>
               <ModalTopInfo data={data} photoId={photoId} />
 
-              <Link className={styles.title} to={`/foto/${data.photo.id}`}>
+              <Link
+                className={`${styles.title} title`}
+                to={`/foto/${data.photo.id}`}
+              >
                 {data.photo.title}
               </Link>
 

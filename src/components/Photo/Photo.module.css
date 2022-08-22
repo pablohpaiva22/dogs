@@ -25,31 +25,6 @@
   background: #fff;
 }
 
-.title {
-  font-size: 3rem;
-  display: block;
-  font-weight: bold;
-  color: var(--color-principal);
-  font-family: var(--type-second);
-  margin: 1rem 0;
-  position: relative;
-  z-index: 1;
-  line-height: 1;
-}
-
-.title::before {
-  content: "";
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: var(--color-secondary);
-  border-radius: 4px;
-  position: absolute;
-  bottom: 4px;
-  left: -6px;
-  z-index: -1;
-}
-
 .animalInfo {
   background: #fff;
   display: flex;

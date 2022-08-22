@@ -40,7 +40,7 @@ const Photo = () => {
             <div className={styles.info}>
               <ModalTopInfo data={data} photoId={id} />
 
-              <div className={styles.title}>{data.photo.title}</div>
+              <h1 className="title">{data.photo.title}</h1>
 
               <div className={styles.animalInfo}>
                 <span>{`${data.photo.peso} Kg`}</span>
