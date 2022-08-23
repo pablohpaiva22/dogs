@@ -11,10 +11,6 @@ const Feed = ({ user }) => {
   const [infinite, setInfinite] = React.useState(true);
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  React.useEffect(() => {
     let wait = false;
 
     function infiniteScroll() {

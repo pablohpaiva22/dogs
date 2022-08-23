@@ -11,11 +11,13 @@ import Account from "./components/Account/Account";
 import Photo from "./components/Photo/Photo";
 import Profile from "./components/Profile/Profile";
 import NotFound from "./components/NotFound";
+import ScrollToTop from "./components/Utilities/ScrollToTop";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+        <ScrollToTop />
         <UserStorage>
           <Header />
 
