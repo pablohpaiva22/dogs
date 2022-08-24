@@ -23,7 +23,7 @@ const AccountTitle = () => {
     getPath();
   }, [pathname]);
 
-  return <h1 className={styles.title}>{title}</h1>;
+  return <h1 className={`${styles.title}`}>{title}</h1>;
 };
 
 export default AccountTitle;

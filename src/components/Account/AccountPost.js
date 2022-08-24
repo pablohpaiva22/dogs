@@ -46,7 +46,7 @@ const AccountPost = () => {
   };
 
   return (
-    <div className={styles.content}>
+    <div className={`${styles.content} animeLeft`}>
       <Helmet>
         <title>Postar | Dogs</title>
       </Helmet>

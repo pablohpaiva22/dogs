@@ -32,7 +32,10 @@ const FeedPhotos = ({ user, page, setInfinite }) => {
   if (loading) return <Loading />;
   if (data)
     return (
-      <ul ref={photosContent} className={`container ${styles.photos}`}>
+      <ul
+        ref={photosContent}
+        className={`container animeLeft ${styles.photos}`}
+      >
         {data.map((photo) => {
           return <FeedPhotosItem key={photo.id} photo={photo} />;
         })}
