@@ -24,7 +24,7 @@ const LoginPasswordLost = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} animeLeft`}>
       <h1 className="title">Perdeu a senha?</h1>
       {!data ? (
         <form onSubmit={handleSubmit}>
