@@ -5,12 +5,14 @@ import styles from "./LoginPasswordReset.module.css";
 import Button from "../Utilities/Form/Button";
 import Input from "../Utilities/Form/Input";
 import { PASSWORD_RESET } from "../../api";
+import { useNavigate } from "react-router-dom";
 
 const LoginPasswordReset = () => {
   const { data, loading, error, request } = useFetch();
   const user = useForm();
   const [key, setKey] = React.useState(null);
   const [login, setLogin] = React.useState(null);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -29,7 +31,13 @@ const LoginPasswordReset = () => {
       password: user.value,
     });
 
-    await request(url, options);
+    const { response } = await request(url, options);
+
+    if (response.ok) {
+      setTimeout(() => {
+        navigate("/login");
+      }, [2000]);
+    }
   };
 
   return (
@@ -39,7 +47,7 @@ const LoginPasswordReset = () => {
         <form onSubmit={handleSubmit}>
           <Input type="text" name="senha" label="Nova Senha" {...user} />
 
-          {error && <p className={styles.error}>Senha inválida.</p>}
+          {error && <p className={styles.error}>Token inválido.</p>}
           {loading ? (
             <Button disabled>Enviando...</Button>
           ) : (
