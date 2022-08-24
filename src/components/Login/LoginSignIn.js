@@ -5,6 +5,7 @@ import useForm from "../../Hooks/useForm.js";
 import { UserContext } from "../../UserContext.js";
 import styles from "./LoginSignIn.module.css";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 function LoginSignIn() {
   const username = useForm();
@@ -28,6 +29,10 @@ function LoginSignIn() {
 
   return (
     <div className={`${styles.formContent} animeLeft`}>
+      <Helmet>
+        <title>Login | Dogs</title>
+      </Helmet>
+
       <h1 className="title">Login</h1>
 
       <form onSubmit={handleSubmit}>

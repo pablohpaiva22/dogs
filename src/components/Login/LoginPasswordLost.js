@@ -5,6 +5,7 @@ import Button from "../Utilities/Form/Button";
 import useForm from "../../Hooks/useForm";
 import { PASSWORD_LOST } from "../../api";
 import useFetch from "../../Hooks/useFetch";
+import { Helmet } from "react-helmet";
 
 const LoginPasswordLost = () => {
   const user = useForm("email");
@@ -25,6 +26,10 @@ const LoginPasswordLost = () => {
 
   return (
     <div className={`${styles.container} animeLeft`}>
+      <Helmet>
+        <title>Nova Senha | Dogs</title>
+      </Helmet>
+
       <h1 className="title">Perdeu a senha?</h1>
       {!data ? (
         <form onSubmit={handleSubmit}>

@@ -6,6 +6,7 @@ import useForm from "../../Hooks/useForm";
 import { USER_POST } from "../../api";
 import { UserContext } from "../../UserContext";
 import useFetch from "../../Hooks/useFetch";
+import { Helmet } from "react-helmet";
 
 const LoginNewUser = () => {
   const username = useForm();
@@ -29,6 +30,10 @@ const LoginNewUser = () => {
 
   return (
     <div className={`${styles.formContent} animeLeft`}>
+      <Helmet>
+        <title>Cadastrar | Dogs</title>
+      </Helmet>
+
       <h1 className="title">Cadastre-se</h1>
 
       <form onSubmit={handleSubmit}>
