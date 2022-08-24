@@ -6,6 +6,7 @@ import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTO_POST } from "../../api";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AccountPost = () => {
   const username = useForm();
@@ -46,6 +47,10 @@ const AccountPost = () => {
 
   return (
     <div className={styles.content}>
+      <Helmet>
+        <title>Postar | Dogs</title>
+      </Helmet>
+
       <form onSubmit={handleSubmit} className={styles.form}>
         <Input label="Nome" id="nome" name="nome" {...username} />
         <Input label="Peso" id="peso" name="peso" {...weight} />

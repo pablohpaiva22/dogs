@@ -13,7 +13,6 @@ import AccountStatistics from "./AccountStatistics";
 import AccountMyAccount from "./AccountMyAccount";
 import useMedia from "../../Hooks/useMedia";
 import NotFound from "../NotFound";
-import { Helmet } from "react-helmet";
 
 const Account = () => {
   const { logOut } = React.useContext(UserContext);
@@ -33,10 +32,6 @@ const Account = () => {
 
   return (
     <section className={`${styles.containerConta} container`}>
-      <Helmet>
-        <title>Minha conta | Dogs</title>
-      </Helmet>
-
       <header className={styles.header}>
         <AccountTitle />
 
