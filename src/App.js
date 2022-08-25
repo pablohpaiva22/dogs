@@ -12,33 +12,36 @@ import Photo from "./components/Photo/Photo";
 import Profile from "./components/Profile/Profile";
 import NotFound from "./components/NotFound";
 import ScrollToTop from "./components/Utilities/ScrollToTop";
+import { HelmetProvider } from "react-helmet-async";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <ScrollToTop />
-        <UserStorage>
-          <Header />
+        <HelmetProvider>
+          <ScrollToTop />
+          <UserStorage>
+            <Header />
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login/*" element={<Login />} />
-            <Route
-              path="/conta/*"
-              element={
-                <ProtectedRoute>
-                  <Account />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/foto/:id" element={<Photo />} />
-            <Route path="/profile/:name" element={<Profile />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login/*" element={<Login />} />
+              <Route
+                path="/conta/*"
+                element={
+                  <ProtectedRoute>
+                    <Account />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/foto/:id" element={<Photo />} />
+              <Route path="/profile/:name" element={<Profile />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
 
-          <Footer />
-        </UserStorage>
+            <Footer />
+          </UserStorage>
+        </HelmetProvider>
       </BrowserRouter>
     </>
   );

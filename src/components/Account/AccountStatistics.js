@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { STATS_GET } from "../../api";
 import useFetch from "../../Hooks/useFetch";
 import Loading from "../Utilities/Loading";

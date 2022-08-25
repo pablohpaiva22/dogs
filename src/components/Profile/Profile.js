@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Profile.module.css";
 import Feed from "../Feed/Feed";
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
   const { name } = useParams();

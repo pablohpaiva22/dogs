@@ -5,7 +5,7 @@ import useForm from "../../Hooks/useForm.js";
 import { UserContext } from "../../UserContext.js";
 import styles from "./LoginSignIn.module.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 function LoginSignIn() {
   const username = useForm();

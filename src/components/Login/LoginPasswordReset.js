@@ -6,7 +6,7 @@ import Button from "../Utilities/Form/Button";
 import Input from "../Utilities/Form/Input";
 import { PASSWORD_RESET } from "../../api";
 import { useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const LoginPasswordReset = () => {
   const { data, loading, error, request } = useFetch();

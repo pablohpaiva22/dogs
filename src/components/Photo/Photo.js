@@ -8,7 +8,7 @@ import ModalComments from "../Feed/Modal/ModalComments";
 import ModalForm from "../Feed/Modal/ModalForm";
 import { UserContext } from "../../UserContext";
 import Loading from "../Utilities/Loading";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const Photo = () => {
   const { id } = useParams();

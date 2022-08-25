@@ -5,7 +5,7 @@ import Button from "../Utilities/Form/Button";
 import useForm from "../../Hooks/useForm";
 import { PASSWORD_LOST } from "../../api";
 import useFetch from "../../Hooks/useFetch";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 const LoginPasswordLost = () => {
   const user = useForm("email");
