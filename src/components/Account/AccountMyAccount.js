@@ -11,7 +11,7 @@ const AccountMyAccount = () => {
       <Helmet>
         <title>Minha conta | Dogs</title>
       </Helmet>
-      <Feed user={data.id} />
+      {data && <Feed user={data.id} />}
     </div>
   );
 };
