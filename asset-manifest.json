@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/pablohpaiva22/dogs/static/css/main.ae4def07.css",
+    "main.js": "/pablohpaiva22/dogs/static/js/main.4dd235d1.js",
+    "static/media/login.jpg": "/pablohpaiva22/dogs/static/media/login.07d71f5b9d5714e556b0.jpg",
+    "static/media/enviar.svg": "/pablohpaiva22/dogs/static/media/enviar.c9e00a2d32740072d1f1f6c2dd921ad6.svg",
+    "index.html": "/pablohpaiva22/dogs/index.html",
+    "static/media/sair.svg": "/pablohpaiva22/dogs/static/media/sair.a1917210ebb96c5029ada5135bdb8847.svg",
+    "static/media/visualizacao-black.svg": "/pablohpaiva22/dogs/static/media/visualizacao-black.ee94fd3d144dfc2f335a.svg",
+    "static/media/visualizacao.svg": "/pablohpaiva22/dogs/static/media/visualizacao.09cd5578a66295798789.svg",
+    "static/media/feed.svg": "/pablohpaiva22/dogs/static/media/feed.b8b13312eb97d7668cf865481902a8c3.svg",
+    "static/media/usuario.svg": "/pablohpaiva22/dogs/static/media/usuario.6d65a298e2fba2e83683d30c9b7177f2.svg",
+    "static/media/dogs.svg": "/pablohpaiva22/dogs/static/media/dogs.69bf6d229e8cb46f9023318d0802ee8f.svg",
+    "static/media/estatisticas.svg": "/pablohpaiva22/dogs/static/media/estatisticas.c69dd1e16d1f351b25eb7f01658f7c8e.svg",
+    "static/media/adicionar.svg": "/pablohpaiva22/dogs/static/media/adicionar.2fe277f9b2182f23c15f5afd7110067a.svg",
+    "main.ae4def07.css.map": "/pablohpaiva22/dogs/static/css/main.ae4def07.css.map",
+    "main.4dd235d1.js.map": "/pablohpaiva22/dogs/static/js/main.4dd235d1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ae4def07.css",
+    "static/js/main.4dd235d1.js"
+  ]
+}
