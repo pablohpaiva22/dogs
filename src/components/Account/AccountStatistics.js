@@ -22,12 +22,13 @@ const AccountStatistics = () => {
   if (error) return <p>Erro.</p>;
   if (data)
     return (
-      <div>
+      <>
         <Helmet>
           <title>Minha conta | Dogs</title>
         </Helmet>
+
         <AccountStatiscsGraph data={data} />
-      </div>
+      </>
     );
   else return null;
 };

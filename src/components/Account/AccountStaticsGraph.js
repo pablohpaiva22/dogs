@@ -27,7 +27,7 @@ const AccountStaticsGraph = ({ data }) => {
   }, [data]);
 
   return (
-    <section className={styles.graph}>
+    <div className={styles.graph}>
       <div className={styles.total}>Total de acessos: {total}</div>
 
       <div className={styles.graphItem}>
@@ -54,7 +54,7 @@ const AccountStaticsGraph = ({ data }) => {
           <VictoryBar alignment="start" data={graph}></VictoryBar>
         </VictoryChart>
       </div>
-    </section>
+    </div>
   );
 };
 
