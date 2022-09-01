@@ -14,12 +14,14 @@
 .modalBox {
   width: 900px;
   min-height: 500px;
+  max-height: 850px;
+  margin: 1rem;
   background: #fff;
   display: grid;
   grid-template-columns: 2fr 1fr;
   animation: showModal 300ms normal;
-  margin: 2rem;
   border-radius: 0.5rem;
+  overflow: auto;
 }
 
 .photo {
