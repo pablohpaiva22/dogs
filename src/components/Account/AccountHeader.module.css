@@ -36,6 +36,39 @@
   fill: var(--color-secondary);
 }
 
+.navigationMobile {
+  display: flex;
+  flex-direction: column;
+  box-shadow: -1px 2px 4px 1px #ddd;
+  background: #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  right: 0;
+  top: 65px;
+  gap: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.navigationMobile a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.4rem;
+  color: #000;
+}
+
+.navigationMobile a:global:hover svg > * {
+  fill: var(--color-secondary);
+}
+
+.navigationMobile a:last-child {
+  border-bottom: none;
+}
+
 .hambBtn {
   display: flex;
   align-items: center;
@@ -72,38 +105,6 @@
   background: var(--color-secondary);
   box-shadow: 0 6px 0 0 var(--color-secondary),
     0 -6px 0 0 var(--color-secondary);
-}
-
-.navigationMobile {
-  display: flex;
-  flex-direction: column;
-  box-shadow: -1px 2px 4px 1px #ddd;
-  background: #fff;
-  border-radius: 4px;
-  padding: 0.5rem 1rem;
-  position: absolute;
-  right: 0;
-  top: 65px;
-  gap: 0.8rem;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.navigationMobile a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.4rem;
-  color: #000;
-}
-
-.navigationMobile a:global:hover svg > * {
-  fill: var(--color-secondary);
-}
-
-.navigationMobile a:last-child {
-  border-bottom: none;
 }
 
 .mobileButtonActive::after {
