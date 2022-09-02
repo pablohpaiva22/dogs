@@ -1,14 +1,16 @@
 .photos {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 274px);
   gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
 }
 
 @media (max-width: 40rem) {
   .photos {
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     gap: 0.4rem;
