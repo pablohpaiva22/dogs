@@ -27,7 +27,7 @@ const AccountStaticsGraph = ({ data }) => {
   }, [data]);
 
   return (
-    <div className={styles.graph}>
+    <div className={`${styles.graph} animeLeft`}>
       <div className={styles.total}>Total de acessos: {total}</div>
 
       <div className={styles.graphItem}>
