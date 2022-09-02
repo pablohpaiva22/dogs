@@ -35,7 +35,7 @@ const LoginPasswordLost = () => {
         <form onSubmit={handleSubmit}>
           <Input type="text" name="email" label="E-mail" {...user} />
 
-          {error && <p className={styles.error}>Email invalido</p>}
+          {error && <p className={styles.error}>E-mail não cadastrado.</p>}
           {loading ? (
             <Button disabled>Enviando...</Button>
           ) : (
@@ -43,7 +43,7 @@ const LoginPasswordLost = () => {
           )}
         </form>
       ) : (
-        <p className={styles.text}>Email enviado.</p>
+        <p className={styles.send}>Email enviado.</p>
       )}
     </div>
   );
