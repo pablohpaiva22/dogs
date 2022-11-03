@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -17,7 +17,7 @@ import { HelmetProvider } from "react-helmet-async";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <HashRouter>
         <HelmetProvider>
           <ScrollToTop />
           <UserStorage>
@@ -43,7 +43,7 @@ function App() {
             <Footer />
           </UserStorage>
         </HelmetProvider>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
