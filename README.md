@@ -20,7 +20,7 @@ Projeto realizado no Curso de React completo da Origamid.
 https://dogs-pablopaiva.netlify.app/
 #
 
-### Inicie o projeto localmente
+### Inicie localmente
 
 #### Instale as dependências
 ```
