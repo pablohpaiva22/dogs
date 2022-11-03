@@ -10,6 +10,10 @@ Utlização de hooks nativos do react e criação de novos hooks próprios, Reac
 Também foram utilizados algumas bibliotecas, como o React Helmnt pra definir os títulos das páginas e victory para criar os gráficos de estatísticas.
 
 Projeto realizado no Curso de React completo da Origamid.
+
+![dogs-home](https://user-images.githubusercontent.com/89819079/199801660-5fdfb816-649e-4237-8e8e-cb11017cf930.PNG) 
+![dogs-login](https://user-images.githubusercontent.com/89819079/199801794-730ec415-1cd8-4f63-b43c-f86795915a82.PNG)
+
 #
 ### Deploy
 
